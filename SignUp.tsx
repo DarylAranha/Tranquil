@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
-const LoginPage = ({ }) => {
+const SignUpPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Implement your login logic here
+  const handleSignUp = () => {
+    // Implement your sign up logic here
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Mental Health App</Text>
+      <Text style={styles.title}>Tranquil</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -25,12 +25,15 @@ const LoginPage = ({ }) => {
         secureTextEntry={true}
         onChangeText={(text) => setPassword(text)}
       />
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
+      <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+        <Text style={styles.buttonText}>Sign up</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate()}>
-        <Text style={styles.signupLink}>Don't have an account? Sign up here</Text>
-      </TouchableOpacity>
+      <View style={styles.loginLink}>
+        <Text style={styles.loginLinkText}>Already have an account?</Text>
+        <TouchableOpacity>
+          <Text style={styles.loginLinkButton}>Login here</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -73,10 +76,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
-  signupLink: {
+  loginLink: {
+    flexDirection: 'row',
+  },
+  loginLinkText: {
+    fontSize: 16,
+    marginRight: 5,
+  },
+  loginLinkButton: {
+    fontSize: 16,
+    fontWeight: 'bold',
     color: '#007AFF',
-    marginTop: 10,
+    textDecorationLine: 'underline',
   },
 });
 
-export default LoginPage;
+export default SignUpPage;

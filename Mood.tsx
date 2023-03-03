@@ -31,7 +31,7 @@ const MoodTracking = () => {
   const [password, setPassword] = useState('');
 
   const handleSignUp = () => {
-    // Implement your sign up logic here
+
   };
 
   return (

@@ -5,7 +5,7 @@ const VerifyWithOTP = () => {
     const [otp, setOTP] = useState('');
   
     const handleOTPEnter = () => {
-      // Handle OTP verification logic here
+
     };
 
   return (
